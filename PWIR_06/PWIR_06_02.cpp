@@ -27,10 +27,11 @@ void somethingLongHalf(uint64_t* result) {
         num_threads(2) \
         private(i) \
         reduction(+ : Buferx)
-    for (a = UINT32_MAX / 2 + 1;a < UINT32_MAX;a++) {
+    for (a = UINT32_MAX/2;a < UINT32_MAX;a++) {
         Buferx += a;
     }
     printf("Pomiar 2 %I64d\n", Buferx);
+    printf("Suma 1 oraz 2 pomiaru: %I64d\n", Bufery+Buferx);
 }
 int main() {
     uint64_t result1 = 0;
